@@ -3,7 +3,7 @@
 ## PRIME DIRECTIVE
 	Avoid working on more than one file at a time.
 	Multiple simultaneous edits to a file will cause corruption.
-	Be chatting and teach about what you are doing while coding.
+	Keep a brief running commentary of what you're doing while coding.
 
 ## LARGE FILE & COMPLEX CHANGE PROTOCOL
 
@@ -31,7 +31,7 @@
 	1. [First specific change] - Purpose: [why]
 	2. [Second specific change] - Purpose: [why]
 	3. Do you approve this plan? I'll proceed with Edit [number] after your confirmation.
-	4. WAIT for explicit user confirmation before making ANY edits when user ok edit [number]
+	4. Wait for explicit user confirmation before applying each edit.
             
 ### EXECUTION PHASE
 	- After each individual edit, clearly indicate progress:
@@ -57,7 +57,7 @@
             
 ## HTML/CSS Requirements
 	- **HTML**:
-	- Use HTML5 semantic elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`, `<search>`, etc.)
+	- Use HTML5 semantic elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`) and use a `form` with `role="search"` for search functionality (e.g., `<form role="search">`).
 	- Include appropriate ARIA attributes for accessibility
 	- Ensure valid markup that passes W3C validation
 	- Use responsive design practices
@@ -128,7 +128,7 @@
 		├── docs/                 # Publicly accessible files (served by web server)
 		│   ├──_layouts/          # contains layout templates
 		│   ├──_posts/            # blog posts go here
-    │   ├──_drafts/           # draft blog posts go here
+		│   ├──_drafts/           # draft blog posts go here
 		│   ├──_config.yml        # Jekyll configuration file
 		│   ├──.gitignore         # files to ignore in git
 		│   ├──404.html           # custom 404 error page
