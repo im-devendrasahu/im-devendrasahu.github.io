@@ -3,8 +3,8 @@ layout: page
 title: Blogs
 permalink: /blogs/
 ---
-
 {%- if site.posts.size > 0 -%}
+  <h1 class="post-list-heading">{{ "Work in Progress" | escape }}</h1>
   <h2 class="post-list-heading">{{ page.list_title | escape }}</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}
