@@ -36,6 +36,8 @@ The generated files will be written to `docs/_site/`.
 	- `_config.yml` – Jekyll configuration
 	- `_site/` – Generated site (do not edit directly)
 
+## Refernce
+
 ## Adding Content
 
 - Pages: add `*.markdown` or `*.html` files in `docs/` with proper YAML front matter.

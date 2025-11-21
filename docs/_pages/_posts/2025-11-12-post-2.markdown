@@ -1,0 +1,9 @@
+---
+layout: default
+title:  "blog 2"
+date:   2025-11-12 15:42:00 +0530
+categories: blogs
+---
+# Hello World
+
+Hello
