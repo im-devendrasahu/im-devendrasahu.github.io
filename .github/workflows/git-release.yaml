@@ -1,0 +1,40 @@
+name: Release website version
+
+run-name: Git Release date ${{ github.event.head_commit.timestamp }} 
+
+on:
+  push:
+    branches:
+      - main
+ 
+jobs:
+  semantic-release:
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    name: Semantic Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for semantic-release to work properly
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.RELEASE_BOT_APP_ID }}
+          private-key: ${{ secrets.RELEASE_BOT_PRIVATE_KEY }}
+
+      - name: Install dependencies
+        run: npx --package semantic-release --package @semantic-release/git --package @semantic-release/changelog semantic-release
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+      
