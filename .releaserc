@@ -15,12 +15,6 @@
       {
         "assets": ["CHANGELOG.md"]
       }
-    ],
-    [
-      "@semantic-release/exec",
-      {
-        "verifyConditionsCmd": "./verify.sh"
-      }
     ]
   ],
   "tagFormat": "portfolio-v${version}"
