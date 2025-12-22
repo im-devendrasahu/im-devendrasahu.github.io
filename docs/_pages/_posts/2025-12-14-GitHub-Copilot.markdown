@@ -1,7 +1,8 @@
 ---
 layout: single
 title:  "GitHub Copilot"
-date:   2025-12-14 
+date:   2025-12-14
+tags: ["AI", "GHCP"]
 toc: true
 toc_label: "Table of Contents"
 ---

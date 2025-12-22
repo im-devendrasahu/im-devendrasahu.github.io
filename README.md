@@ -33,10 +33,9 @@ The generated files will be written to `docs/_site/`.
 
 - `docs/` – Jekyll site source (pages, posts, layouts, assets)
 	- `_layouts/` – HTML templates
-	- `_posts/` – Blog posts (use `YYYY-MM-DD-title.markdown` with front matter)
+	- `_pages/_posts` – Blog posts (use `YYYY-MM-DD-title.markdown` with front matter)
 	- `assets/` – CSS, images and other static assets
 	- `_config.yml` – Jekyll configuration
-	- `_site/` – Generated site (do not edit directly)
 
 ## Adding Content
 
