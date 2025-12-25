@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/im-devendrasahu/im-devendrasahu.github.io/compare/portfolio-v1.0.1...portfolio-v2.0.0) (2025-12-25)
+
+
+### Performance Improvements
+
+* **website:** remove unwanted files and make it to use remote theme ([69f52de](https://github.com/im-devendrasahu/im-devendrasahu.github.io/commit/69f52de4b1bb018a86a9325af3aabb96e71e8038))
+
+
+### BREAKING CHANGES
+
+* **website:** struture of website changed and DRY, some work on Docker, Taskfile
+
 ## [1.0.1](https://github.com/im-devendrasahu/im-devendrasahu.github.io/compare/portfolio-v1.0.0...portfolio-v1.0.1) (2025-12-22)
 
 
