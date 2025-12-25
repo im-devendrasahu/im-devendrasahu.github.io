@@ -1,0 +1,13 @@
+_site
+.git
+*.log
+*.swp
+tmp
+_drafts
+_site
+.gitignore
+Makefile
+README.md
+Taskfile.yml
+renovate.json
+.hadolint.yaml

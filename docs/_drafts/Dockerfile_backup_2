@@ -1,0 +1,31 @@
+FROM ruby:3.3.10-alpine3.23
+
+# Set environment variables
+ENV LANG=C.UTF-8
+
+# Install dependencies
+RUN apk update -qq && apk add --no-cache \
+  build-base \
+  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /var/cache/apk/*
+
+# Set working directory
+WORKDIR /usr/src/app
+
+# Copy Gemfile and Gemfile.lock
+COPY Gemfile Gemfile.lock ./
+
+# Install gems
+RUN gem install bundler:4.0.2 && bundle install --no-cache
+
+# Copy site files
+COPY . .
+
+# Build the site (optional)
+# RUN bundle exec jekyll build
+
+# Serve the site
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
+
+# Expose port
+EXPOSE 4000

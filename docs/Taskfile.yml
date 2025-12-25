@@ -1,0 +1,49 @@
+#Install Taskfile https://taskfile.dev/docs/installation
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+vars:
+  PERSON: Devendra
+
+env:
+  ENV: testing
+
+dotenv: ['.env', '{{.ENV}}/.env', '{{.HOME}}/.env']
+
+tasks:
+  default:
+    dotenv: ['.env_task_specific']
+    env:
+      TASK_ENV: task_specific_value
+    desc: Print a greeting message
+    cmds:
+      - echo "Hello you are using Taskfile {{.PERSON}} ${ENV} ${TASK_ENV}!"
+    silent: true
+  
+  build:
+    dir: '{{.USER_WORKING_DIR}}'
+    preconditions:
+      - test -f Dockerfile
+    cmds:
+      - docker build -t devendrasahu.online .
+  
+  run:
+    dir: '{{.USER_WORKING_DIR}}'
+    preconditions:
+      - docker image inspect devendrasahu.online >/dev/null 2>&1  # image exists
+      # - ! ss -ltn | grep -q ':4000' # port 4000 is free
+    cmds:
+      - docker rm -f website >/dev/null 2>&1 || true
+      - docker run --name website --rm -p 4000:4000 
+        -v {{.USER_WORKING_DIR}}:/usr/src/app  
+        -v {{.USER_WORKING_DIR}}/_posts:/usr/src/app/_posts  
+        devendrasahu.online
+  
+  exec:
+    preconditions:
+      - docker ps -a --filter status=running --filter name=website  # check if container is running with website name
+    cmds:
+      - docker exec -it website sh
+    # deps:
+    #   - run
