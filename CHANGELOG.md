@@ -1,3 +1,11 @@
+## [3.0.1](https://github.com/im-devendrasahu/im-devendrasahu.github.io/compare/portfolio-v3.0.0...portfolio-v3.0.1) (2025-12-29)
+
+
+### Bug Fixes
+
+* website ([1212920](https://github.com/im-devendrasahu/im-devendrasahu.github.io/commit/1212920c8edfe4509fbe68d0801e7954e4295e07))
+* website ([b97e12d](https://github.com/im-devendrasahu/im-devendrasahu.github.io/commit/b97e12dfee81e5f403ef3257030642f86cb880bd))
+
 # [3.0.0](https://github.com/im-devendrasahu/im-devendrasahu.github.io/compare/portfolio-v2.0.0...portfolio-v3.0.0) (2025-12-29)
 
 
