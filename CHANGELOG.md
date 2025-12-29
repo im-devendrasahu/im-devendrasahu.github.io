@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/im-devendrasahu/im-devendrasahu.github.io/compare/portfolio-v2.0.0...portfolio-v3.0.0) (2025-12-29)
+
+
+### Performance Improvements
+
+* **website:** switch to Chirpy theme ([3337c14](https://github.com/im-devendrasahu/im-devendrasahu.github.io/commit/3337c14a977f7e53ba43ddb9698fd163cba8e8a2))
+
+
+### BREAKING CHANGES
+
+* **website:** Switched to chirpy theme
+
 # [2.0.0](https://github.com/im-devendrasahu/im-devendrasahu.github.io/compare/portfolio-v1.0.1...portfolio-v2.0.0) (2025-12-25)
 
 
