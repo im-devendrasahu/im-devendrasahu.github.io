@@ -26,24 +26,53 @@ tasks:
     preconditions:
       - test -f Dockerfile
     cmds:
-      - docker build -t devendrasahu.online .
-  
+      - docker build -t 75devendra/devendrasahu.online:latest .
+
   run:
     dir: '{{.USER_WORKING_DIR}}'
     preconditions:
-      - docker image inspect devendrasahu.online >/dev/null 2>&1  # image exists
+      - docker image inspect 75devendra/devendrasahu.online:latest >/dev/null 2>&1  # image exists
       # - ! ss -ltn | grep -q ':4000' # port 4000 is free
     cmds:
-      - docker rm -f website >/dev/null 2>&1 || true
-      - docker run --name website --rm -p 4000:4000 
+      - docker rm -f portfolio >/dev/null 2>&1 || true
+      - docker run --name portfolio --rm -p 4000:4000 
+        --user 1000:1000
+        -d 75devendra/devendrasahu.online:latest
+      # if container is not configured to run as non-root user, you can't run it with --user 1000:1000
+  
+  test-run:
+    dir: '{{.USER_WORKING_DIR}}'
+    preconditions:
+      - docker image inspect 75devendra/devendrasahu.online:latest >/dev/null 2>&1  # image exists
+      # - ! ss -ltn | grep -q ':4000' # port 4000 is free
+    cmds:
+      - docker rm -f portfolio >/dev/null 2>&1 || true
+      - docker run --name portfolio --rm -p 4000:4000 
+        --user root
         -v {{.USER_WORKING_DIR}}:/usr/src/app  
         -v {{.USER_WORKING_DIR}}/_posts:/usr/src/app/_posts  
-        devendrasahu.online
+        75devendra/devendrasahu.online:latest
   
   exec:
     preconditions:
-      - docker ps -a --filter status=running --filter name=website  # check if container is running with website name
+      - docker ps -a --filter status=running --filter name=portfolio  # check if container is running with portfolio name
     cmds:
-      - docker exec -it website sh
+      - docker exec -it portfolio sh
+    # deps:
+    #   - run
+  
+  login:
+    preconditions:
+      - test -f .env # check if credentials file exists
+    cmds:
+      - docker login -u "$user" -p "$access_token" 
+    silent: true
+
+  push:
+    preconditions:
+      - docker images --filter label=com.devendra.name
+    cmds:
+      - docker push 75devendra/devendrasahu.online:latest
+    silent: true
     # deps:
     #   - run

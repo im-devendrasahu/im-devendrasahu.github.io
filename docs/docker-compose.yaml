@@ -1,0 +1,18 @@
+---
+services:
+  portfolio-website:
+    image: 75devendra/devendrasahu.online:latest
+    container_name: portfolio-website
+    user: "1000"
+    # environment:
+    #   - PUID=1000
+    #   - PGID=1000
+    #   - TZ=Etc/UTC
+    #   - WEBUI_PORT=8080
+    #   - TORRENTING_PORT=6881
+    # volumes:
+    #   - ./appdata:/config
+    #   - ./downloads:/downloads #optional
+    ports:
+      - 4000:4000
+    restart: unless-stopped
