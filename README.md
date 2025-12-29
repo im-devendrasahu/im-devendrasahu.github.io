@@ -67,3 +67,7 @@ If you need help maintaining this site, open an issue or contact via Email: [75d
 | `perf(pencil): remove graphiteWidth option`<br><br>`BREAKING CHANGE: The graphiteWidth option has been removed.`<br>`The default graphite width of 10mm is always used for performance reasons.` | ~~Major~~ Breaking Release <br /> (Note that the `BREAKING CHANGE: ` token must be in the footer of the commit) |
 | `chore(pencil): add 'xyz' post`                                                                                                                                                       		   | No release, just regular work                                                                                   |
 
+## Resources
+- [Icon generator](https://realfavicongenerator.net/)
+- https://github.com/davidtkeane/davidtkeane.github.io/tree/main
+- https://raffertyuy.com/about/

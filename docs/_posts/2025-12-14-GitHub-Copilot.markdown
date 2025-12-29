@@ -1,7 +1,7 @@
 ---
-layout: single
 title:  "GitHub Copilot"
 date:   2025-12-14
+categories: [AI]
 tags: ["ai", "ghcp"]
 toc: true
 toc_label: "Table of Contents"
@@ -33,7 +33,7 @@ We can ask questions directly inside the file by writing them as comments. This 
 
 Now let’s jump into the IDE and see how this works. Add a question after the **comment character**, and Copilot will respond in a more formal way.
 
-![Asking questions in Copilot](/assets/images/GHCP/1.png){:width="600px"}
+![Asking questions in Copilot](/assets/img/posts/GHCP/1.png){:width="600px"}
 
 > **Note:** This is good for brief answers inside the code itself. If you want a more descriptive explanation, it’s better to switch to chat mode.
 
@@ -41,19 +41,19 @@ Now let’s jump into the IDE and see how this works. Add a question after the *
 ## Generate automatic commit message
 
 Copilot can also help generate commit messages automatically based on your changes.
-![Auto commit message](/assets/images/GHCP/2.png){:width="600px"}
+![Auto commit message](/assets/img/posts/GHCP/2.png){:width="600px"}
 
 ---
 ## Command palette
 
 Most IDEs support <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>, which opens the Command Palette on Windows.
 Search for the **Copilot** keyword, and it will list all Copilot-related commands available in your IDE.
-![Command palette](/assets/images/GHCP/3.png){:width="600px"}
+![Command palette](/assets/img/posts/GHCP/3.png){:width="600px"}
 ---
 ## Local review
 
 Now let’s move forward to local review. Select a code block, right-click, and let Copilot review it. However, one issue with this approach is that Copilot reviews the code based on its own guidelines.
-![Review](/assets/images/GHCP/4.png){:width="600px"}
+![Review](/assets/img/posts/GHCP/4.png){:width="600px"}
 
 This makes the approach a bit volatile. To fix this, we can provide fixed instructions so Copilot behaves the same way every time.
 

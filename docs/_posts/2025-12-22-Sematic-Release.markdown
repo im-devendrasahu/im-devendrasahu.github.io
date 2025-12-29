@@ -1,8 +1,8 @@
 ---
-layout: single
 title:  "Semantic Release"
 date:   2025-12-22
 tags: ["semantic-release", "devops", "release"]
+categories: [DevOps]
 toc: true
 toc_label: "Table of Contents"
 ---
