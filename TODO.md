@@ -28,6 +28,9 @@ List of pending task and other stuff.
 - [ ] documentation
   - [ ] README.md update
 - [ ] Linting yaml and other
+- [ ] explore devcontainers
+- [ ] fix .vscode, .editorconfig
+
 
 ### In Progress
 
