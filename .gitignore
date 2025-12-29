@@ -3,4 +3,4 @@ _site
 .jekyll-metadata
 docs/.jekyll-cache
 .DS_Store
-docs/.env
+.env
