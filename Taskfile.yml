@@ -20,7 +20,7 @@ tasks:
     cmds:
       - echo "Hello you are using Taskfile {{.PERSON}} ${ENV} ${TASK_ENV}!"
     silent: true
-  
+
   build:
     dir: '{{.USER_WORKING_DIR}}'
     preconditions:
@@ -35,11 +35,11 @@ tasks:
       # - ! ss -ltn | grep -q ':4000' # port 4000 is free
     cmds:
       - docker rm -f portfolio >/dev/null 2>&1 || true
-      - docker run --name portfolio --rm -p 4000:4000 
+      - docker run --name portfolio --rm -p 4000:4000
         --user 1000:1000
         -d 75devendra/devendrasahu.online:latest
       # if container is not configured to run as non-root user, you can't run it with --user 1000:1000
-  
+
   test-run:
     dir: '{{.USER_WORKING_DIR}}'
     preconditions:
@@ -47,12 +47,12 @@ tasks:
       # - ! ss -ltn | grep -q ':4000' # port 4000 is free
     cmds:
       - docker rm -f portfolio >/dev/null 2>&1 || true
-      - docker run --name portfolio --rm -p 4000:4000 
+      - docker run --name portfolio --rm -p 4000:4000
         --user root
-        -v {{.USER_WORKING_DIR}}:/usr/src/app  
-        -v {{.USER_WORKING_DIR}}/_posts:/usr/src/app/_posts  
+        -v {{.USER_WORKING_DIR}}:/usr/src/app
+        -v {{.USER_WORKING_DIR}}/_posts:/usr/src/app/_posts
         75devendra/devendrasahu.online:latest
-  
+
   exec:
     preconditions:
       - docker ps -a --filter status=running --filter name=portfolio  # check if container is running with portfolio name
@@ -60,12 +60,12 @@ tasks:
       - docker exec -it portfolio sh
     # deps:
     #   - run
-  
+
   login:
     preconditions:
       - test -f .env # check if credentials file exists
     cmds:
-      - docker login -u "$user" -p "$access_token" 
+      - docker login -u "$user" -p "$access_token"
     silent: true
 
   push:

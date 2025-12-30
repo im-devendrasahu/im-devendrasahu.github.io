@@ -13,18 +13,20 @@ This is my first blog, and hopefully I will continue posting blogs and series wh
 In this blog, we will discuss **GitHub Copilot**, which is widely adopted by many organizations to increase engineer efficiency and improve delivery velocity by harnessing the power of AI.
 
 ---
+
 ## Shortcuts
 
 Shortcuts play a vital role while coding, as switching back and forth between chat windows can be a tough task and may result in smaller or less useful code suggestions.
 
 There are many keyboard shortcuts available, but some important ones are:
 
-- <kbd>Ctrl</kbd> + <kbd>I</kbd> → Inline suggestion  
-- <kbd>Ctrl</kbd> + <kbd>Enter</kbd> → Alternate / multiple suggestions  
+- <kbd>Ctrl</kbd> + <kbd>I</kbd> → Inline suggestion
+- <kbd>Ctrl</kbd> + <kbd>Enter</kbd> → Alternate / multiple suggestions
 
 For more shortcuts, check the official docs:  [Keyboard shortcuts](https://docs.github.com/en/copilot/reference/keyboard-shortcuts)
 
 ---
+
 ## Asking questions ❓
 
 Sometimes we want to ask questions about our code. GitHub Copilot provides an inline question-and-answer mode, which plays a vital role here.
@@ -38,18 +40,21 @@ Now let’s jump into the IDE and see how this works. Add a question after the *
 > **Note:** This is good for brief answers inside the code itself. If you want a more descriptive explanation, it’s better to switch to chat mode.
 
 ---
+
 ## Generate automatic commit message
 
 Copilot can also help generate commit messages automatically based on your changes.
 ![Auto commit message](/assets/img/posts/GHCP/2.png){:width="600px"}
 
 ---
+
 ## Command palette
 
 Most IDEs support <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>, which opens the Command Palette on Windows.
 Search for the **Copilot** keyword, and it will list all Copilot-related commands available in your IDE.
 ![Command palette](/assets/img/posts/GHCP/3.png){:width="600px"}
 ---
+
 ## Local review
 
 Now let’s move forward to local review. Select a code block, right-click, and let Copilot review it. However, one issue with this approach is that Copilot reviews the code based on its own guidelines.

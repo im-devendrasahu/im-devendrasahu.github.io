@@ -46,7 +46,7 @@ COPY . .
 # RUN chown -R jekyll:jekyll /usr/src/app
 RUN apk add --no-cache curl && \
     chown -R 1000:1000 /usr/src/app
-    
+
 # Switch to non-root user
 # USER jekyll
 USER 1000:1000

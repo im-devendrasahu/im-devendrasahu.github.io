@@ -31,9 +31,8 @@ List of pending task and other stuff.
 - [ ] explore devcontainers
 - [ ] fix .vscode, .editorconfig
 
-
 ### In Progress
 
 ### Done ✓
 
-- [x] Create my first TODO.md  
+- [x] Create my first TODO.md
