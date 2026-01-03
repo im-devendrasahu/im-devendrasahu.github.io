@@ -8,24 +8,8 @@ order: 5
 
 ## List of toolset i used or touched on
 
-<table>
-<tr>
- <td>Cloud</td>
- <td>
-  <a href="https://aws.amazon.com/">AWS</a>,
-        <a href="https://azure.microsoft.com/en-in/">Azure</a>
- </td>
-</tr>
-<tr>
- <td>CICD</td>
- <td>
-  <a href="https://docs.github.com/en/actions">Github Actions</a>
- </td>
-</tr>
-<tr>
- <td>IAC</td>
- <td>
-  <a href="https://developer.hashicorp.com/terraform">terraform</a>
- </td>
-</tr>
-</table>
+| Category | Tools                                                                       |
+| -------- | --------------------------------------------------------------------------- |
+| Cloud    | [AWS](https://aws.amazon.com/), [Azure](https://azure.microsoft.com/en-in/) |
+| CICD     | [GitHub Actions](https://docs.github.com/en/actions)                        |
+| IAC      | [Terraform](https://developer.hashicorp.com/terraform)                      |

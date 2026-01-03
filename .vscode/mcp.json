@@ -1,13 +1,19 @@
 {
-    "servers": {
-      "terraform": {
-        "command": "docker",
-        "args": [
-          "run",
-          "-i",
-          "--rm",
-          "hashicorp/terraform-mcp-server:0.2.3"
-        ]
-      }
+  "servers": {
+    "terraform": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "hashicorp/terraform-mcp-server:0.2.3"]
     }
+    // "playwright": {
+    //   "command": "docker",
+    //   "args": [
+    //     "run",
+    //     "-i",
+    //     "--rm",
+    //     "--init",
+    //     "--pull=always",
+    //     "mcr.microsoft.com/playwright/mcp"
+    //   ]
+    // }
+  }
 }

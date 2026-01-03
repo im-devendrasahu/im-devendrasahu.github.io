@@ -1,74 +1,37 @@
 ---
-title:  "Semantic Release"
-date:   2025-12-22
-tags: ["semantic-release", "devops", "release"]
+title: "Semantic Release: Automated Versioning and GitHub Releases"
+date: 2025-12-22
+tags: ["semantic-release", "devops", "release-automation"]
 categories: [DevOps]
-toc: true
-toc_label: "Table of Contents"
 ---
+
 ## Introduction
 
-I am working on terraform modules and we want that modules to be released in GitHub tag.
-For that we explore multiple tools at our end and also keeping the bigger approach we also want to create release process for not only terraform specific but to cover other things as well.
+While working on Terraform modules, we wanted a consistent and automated way to release modules using GitHub tags. Instead of manually managing versions and releases, we explored multiple tools to streamline this process.
 
-We identify the solution called [semantic-release](https://semantic-release.gitbook.io/semantic-release/).
+Our broader goal was not limited to Terraform modules alone. We wanted a generic and reusable release process that could also be applied to other projects in the future.
+
+After evaluating different options, we identified **semantic-release** as a suitable solution for automated versioning and release management.
+
+---
 
 ## Approach
 
-1. Install node over machine where whole process will run.
-2. Create .releaserc file that contain the actual configuration require to perform action, this need to be placed in module or root of directory which we call one unit for release.
-Lets explore file, it is json file containing key value pair.
-branches --> It specify tool to be executed in that branch only.
-plugins  --> which plugins will be used.
+The setup for semantic-release involves a few straightforward steps.
 
- ```json
-      {
-        "branches": ["main"],
-        "plugins": [
-           "@semantic-release/commit-analyzer",
-           "@semantic-release/release-notes-generator",
-           [
-           "@semantic-release/changelog",
-           {
-           "changelogFile": "CHANGELOG.md"
-      }
+### 1. Install Node.js
 
-      ],
-      "@semantic-release/github",
-      [
-      "@semantic-release/git",
-      {
-         "assets": ["CHANGELOG.md"]
-      }
-      ],
-      ],
-      "tagFormat": "portfolio-v${version}"
-      }
- ```
+Semantic-release runs on Node.js, so ensure Node.js is installed on the machine or runner where the release process will execute.
 
-1. After this we want package.json in same directory to that contain some metadata like
+---
 
- ```json
-    {
-      "name": "module1",
-      "description": "Contains code for module one."
-    }
- ```
+### 2. Create the `.releaserc` Configuration File
 
-1. Now we are ready for execution you just want to run below command that will dry run for you in local, it GH_TOKEN (github token with appropiate permission) to check connection with repository.
+Create a `.releaserc` file in the root of your module or repository. This file defines the release behavior and acts as a single unit for versioning and publishing.
 
- ```bash
-    npx \
-     --package semantic-release \
-     --package @semantic-release/git \
-     --package @semantic-release/changelog \
-     semantic-release
- ```
+The file is written in JSON format and contains key configuration options:
 
-## Automation
+- **branches** → Specifies which branches are eligible for releases
+- **plugins** → Defines the plugins used during the release lifecycle
 
-Now coming to the automation part, we can make this step in any CICD tool, either GitHub action, Jenkins or any thing that will do stuff for us.
-
-## Scope
-
-Once you are comfortable with this approach, you can explore other plugins.
+Example `.releaserc` configuration:

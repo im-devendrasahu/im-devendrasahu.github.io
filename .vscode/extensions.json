@@ -7,6 +7,7 @@
     "davidanson.vscode-markdownlint",
     "esbenp.prettier-vscode",
     "yzhang.markdown-all-in-one",
-    "mkhl.shfmt"
+    "mkhl.shfmt",
+    "chrischinchilla.vale-vscode"
   ]
 }

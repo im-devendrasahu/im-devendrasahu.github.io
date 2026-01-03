@@ -76,3 +76,9 @@ tasks:
     silent: true
     # deps:
     #   - run
+  vale:
+    preconditions:
+      - test -d .github/styles
+      - test -f .vale.ini
+    cmds:
+      - docker run --rm  -v {{.USER_WORKING_DIR}}:/docs -w /docs  jdkato/vale .
