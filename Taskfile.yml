@@ -61,6 +61,13 @@ tasks:
     # deps:
     #   - run
 
+  stop:
+    preconditions:
+      - docker ps -a --filter status=running --filter name=portfolio  # check if container is running with llm name
+    cmds:
+      - docker stop portfolio
+
+
   login:
     preconditions:
       - test -f .env # check if credentials file exists
