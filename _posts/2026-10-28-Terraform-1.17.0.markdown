@@ -1,3 +1,10 @@
+---
+title: "Terraform 1.17.0: Two Small Changes Worth Noticing"
+date: 2026-10-28
+tags: ["terraform", "devops"]
+categories: [DevOps]
+---
+
 # Terraform 1.17.0: Two Small Changes Worth Noticing
 
 *Terraform 1.17.0 was released on October 21, 2026. With so much attention on AI, I nearly missed a couple of useful Terraform improvements.*
